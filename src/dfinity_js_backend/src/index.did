@@ -1,0 +1,8 @@
+service: () -> {
+    addReview: (record {comment:text; rating:nat64; booking_id:text}) -> (variant {Ok; Err:text});
+    createBooking: (record {service_date:nat64; service_type:text; service_provider_id:text; client_id:text}) -> (variant {Ok:record {id:text; status:text; service_date:nat64; service_type:text; service_provider_id:text; createdAt:nat64; client_id:text}; Err:text});
+    createClient: (record {name:text; contact_info:text}) -> (variant {Ok:record {id:text; name:text; contact_info:text}; Err:text});
+    createServiceProvider: (record {service_type:text; name:text; availability:vec nat64; contact_info:text}) -> (variant {Ok:record {id:text; reviews:vec record {clientId:text; createdAt:nat64; comment:text; rating:nat64}; service_type:text; name:text; createdAt:nat64; availability:vec nat64; contact_info:text; average_rating:nat64}; Err:text});
+    getServiceProviderHistory: (text) -> (variant {Ok:vec record {id:text; status:text; service_date:nat64; service_type:text; service_provider_id:text; createdAt:nat64; client_id:text}; Err:text}) query;
+    rescheduleBooking: (text, nat64) -> (variant {Ok; Err:text});
+}
