@@ -85,8 +85,8 @@ const Review = Record({
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-repo/icp_rust_boilerplate.git
-   cd icp_rust_boilerplate
+   git clone https://github.com/akenoemily/funeral-chain-Azle-.git
+   cd funeral-chain-Azle-
    ```
 
 2. Install dependencies:
